@@ -2,7 +2,6 @@
 <% unless @machine.snacks.empty? %>
 Average Snack Price: $<%= @machine.average_snack_price %>
 <% @machine.snacks.each do |snack| %>
-<%= snack.name %>
-<%= snack.money_string %>
+<div><%= snack.name %>:<%= snack.money_string %></div>
 <%end %>
 <% end %>

@@ -1,4 +1,3 @@
-
 require 'rails_helper'
 
 
@@ -7,12 +6,15 @@ describe 'when user visits vending machine show page ' do
     sam = Owner.create(name: "Sam's Snacks")
     machine = sam.machines.create(location: "Don's Mixed Drinks")
     snack1 = machine.snacks.create!(name: 'oreos', price: 100)
-    snack2 = machine.snacks.create!(name: 'thing', price: 200)
+    snack2 = machine.snacks.create!(name: 'oreos', price: 200)
 
-    visit machine_path(machine)
-    
-    expect(page).to have_content(snack1.name, snack1.money)
-    expect(page).to have_content(snack2.name, snack2.money)
+    visit snack_path(snack1)
+
+    expect(page).to have_content(snack1.name)
+    expect(page).to have_content(snack1.money_string)
+    expect(page).to have_content(sam.name)
     expect(page).to have_content(machine.average_snack_price)
+    expect(page).to have_content(snack1.name)
+    expect(page).to have_content(snack2.name)
   end
 end
