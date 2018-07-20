@@ -1,0 +1,11 @@
+<%= @snack.name %>
+<%= @snack.money_string %>
+<% unless @snack.machines.empty? %>
+  <% @snack.machines.each do |machine| %>
+  <%= machine.location %>
+  <%= machine.average_snack_price %>
+  <% machine.snacks.each do |snack| %>
+  <%= snack.name %>
+  <% end %>
+  <% end %>
+<% end %>
