@@ -13,5 +13,6 @@ describe 'when user visits vending machine show page ' do
 
     expect(page).to have_content(snack1.name, snack1.money)
     expect(page).to have_content(snack2.name, snack2.money)
+    expect(page).to have_content(machine.average_snack_price)
   end
 end
