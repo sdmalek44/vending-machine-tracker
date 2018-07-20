@@ -20,6 +20,8 @@ group :development, :test do
   gem 'launchy'
   gem 'pry-rails'
   gem 'rspec-rails'
+  gem 'database_cleaner'
+  gem 'simplecov'
 end
 
 group :development do
