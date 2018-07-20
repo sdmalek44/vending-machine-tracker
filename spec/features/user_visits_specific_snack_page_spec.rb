@@ -10,9 +10,10 @@ describe 'when user visits vending machine show page ' do
 
     visit snack_path(snack1)
 
+
     expect(page).to have_content(snack1.name)
     expect(page).to have_content(snack1.money_string)
-    expect(page).to have_content(sam.name)
+    expect(page).to have_content(machine.location)
     expect(page).to have_content(machine.average_snack_price)
     expect(page).to have_content(snack1.name)
     expect(page).to have_content(snack2.name)
