@@ -1,1 +1,7 @@
 <h1><%= @machine.location %> Vending Machine</h1>
+<% unless @machine.snacks.empty? %>
+<% @machine.snacks.each do |snack| %>
+<%= snack.name %>
+<%= snack.money_string %>
+<%end %>
+<% end %>
